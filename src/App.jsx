@@ -7,7 +7,7 @@ import HotelDetails from "./components/HotelDetails";
 function App() {
 	return (
 		<div>
-			<Toaster />
+			<Toaster position="top-left" reverseOrder={false} />
 			<QueryClientProvider client={new QueryClient()}>
 				<Switch>
 					<Route path="/" component={HotelList} />

@@ -1,6 +1,9 @@
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import Input from "@mui/material/Input";
+import Button from "@mui/material/Button";
 import useStore from "../store";
+import { Typography } from "@mui/material";
 
 const BookingForm = ({ hotel }) => {
 	const {
@@ -17,17 +20,20 @@ const BookingForm = ({ hotel }) => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<input type="date" {...register("startDate", { required: true })} />
+			<Input type="date" {...register("startDate", { required: true })} />
 			{errors.startDate && (
-				<span style={{ color: "red" }}>Start date is required</span>
+				<Typography style={{ color: "red" }}>Start date is required</Typography>
 			)}
-
-			<input type="date" {...register("endDate", { required: true })} />
+			<br />
+			<Input type="date" {...register("endDate", { required: true })} />
 			{errors.endDate && (
-				<span style={{ color: "red" }}>End date is required</span>
+				<Typography style={{ color: "red" }}>End date is required</Typography>
 			)}
-
-			<input type="submit" value="Make Reservaation" />
+			<br />
+			<br />
+			<Button variant="contained" type="submit">
+				Make Reservation
+			</Button>
 		</form>
 	);
 };
